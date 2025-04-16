@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Add Products</title>
+    <style>
+        :root {
+            --primary: #4a4e69;
+            --secondary: #22223b;
+            --accent: #9a8c98;
+            --background: #f2e9e4;
+            --button: #c9ada7;
+            --button-hover: #22223b;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: var(--background);
+            color: var(--secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        form input, form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        form input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 5px rgba(74, 78, 105, 0.3);
+        }
+        form button {
+            background: var(--button);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        form button:hover {
+            background: var(--button-hover);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const password = prompt("Enter Admin Password:");
+        if (password !== "123456789") {
+            alert("Access Denied!");
+            window.location.href = "index.html"; // Redirect to the main page
+        }
+    </script>
+
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <form id="addProductForm">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" placeholder="Enter product name" required>
+            
+            <label for="productPrice">Product Price</label>
+            <input type="number" id="productPrice" placeholder="Enter product price" required>
+            
+            <label for="productImage">Product Image URL</label>
+            <input type="url" id="productImage" placeholder="Enter product image URL" required>
+            
+            <button type="submit">Add Product</button>
+        </form>
+        <div class="footer">
+            <p>&copy; 2025 Jeal Fashion House. <a href="JFH.HTML">Back to Home</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get product details
+            const name = document.getElementById('productName').value;
+            const price = document.getElementById('productPrice').value;
+            const image = document.getElementById('productImage').value;
+
+            // Save product to localStorage
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            products.push({ name, price, image });
+            localStorage.setItem('products', JSON.stringify(products));
+
+            alert('Product added successfully!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

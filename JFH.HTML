@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeal Fashion House | Online Store</title>
+    <style>
+        :root {
+            --primary: #22223b;
+            --secondary: #4a4e69;
+            --accent: #f2e9e4;
+            --highlight: #9a8c98;
+            --button: #c9ada7;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: var(--accent);
+            color: var(--primary);
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 30px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        nav {
+            background: var(--secondary);
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 12px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 8px 18px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        nav a:hover, nav a.active {
+            background: var(--highlight);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto 80px auto;
+            padding: 0 20px;
+        }
+        section {
+            margin-bottom: 50px;
+        }
+        #home {
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        #home h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        #products h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.15s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+        .product-card img {
+            max-width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 10px 0 5px 0;
+        }
+        .product-price {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .order-btn {
+            background: var(--button);
+            color: var(--primary);
+            border: none;
+            border-radius: 4px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .order-btn:hover {
+            background: var(--highlight);
+            color: #fff;
+        }
+        #contact {
+            background: #fff;
+            border-radius: 10px;
+            padding: 35px 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            max-width: 500px;
+            margin: 0 auto 50px auto;
+        }
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            margin-bottom: 18px;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        form button {
+            background: var(--button);
+            color: var(--primary);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        form button:hover {
+            background: var(--highlight);
+            color: #fff;
+        }
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 8px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jeal Fashion House</h1>
+        <p style="margin-top:8px;font-size:1.1rem;font-weight:400;">Trendy. Affordable. For You.</p>
+    </header>
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>About Us</h2>
+            <p>
+                Welcome to <strong>Jeal Fashion House</strong> – your destination for the latest trends and timeless classics. 
+                We offer a curated selection of stylish, affordable clothing and accessories for every occasion. 
+                Shop with confidence and discover your unique style today!
+            </p>
+        </section>
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="product1.jpg" alt="Elegant Dress">
+                    <div class="product-title">Elegant Dress</div>
+                    <div class="product-price">$20</div>
+                    <form action="https://formsubmit.co/owen13357@gmail.com" method="POST">
+                        <input type="hidden" name="product" value="Elegant Dress">
+                        <input type="hidden" name="price" value="$20">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your order of Elegant Dress! We will contact you shortly.">
+                        <button type="submit" class="order-btn">Order Now</button>
+                    </form>
+                </div>
+                <div class="product-card">
+                    <img src="product2.jpg" alt="Classic Shirt">
+                    <div class="product-title">Classic Shirt</div>
+                    <div class="product-price">$30</div>
+                    <form action="https://formsubmit.co/owen13357@gmail.com" method="POST">
+                        <input type="hidden" name="product" value="Classic Shirt">
+                        <input type="hidden" name="price" value="$30">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your order of Classic Shirt! We will contact you shortly.">
+                        <button type="submit" class="order-btn">Order Now</button>
+                    </form>
+                </div>
+                <div class="product-card">
+                    <img src="product3.jpg" alt="Trendy Jeans">
+                    <div class="product-title">Trendy Jeans</div>
+                    <div class="product-price">$25</div>
+                    <form action="https://formsubmit.co/owen13357@gmail.com" method="POST">
+                        <input type="hidden" name="product" value="Trendy Jeans">
+                        <input type="hidden" name="price" value="$25">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your order of Trendy Jeans! We will contact you shortly.">
+                        <button type="submit" class="order-btn">Order Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form action="https://formsubmit.co/owen13357@gmail.com" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                <input type="hidden" name="_autoresponse" value="Thank you for contacting Jeal Fashion House! We will get back to you soon.">
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Jeal Fashion House. All rights reserved.
+    </footer>
+</body>
+</html>
